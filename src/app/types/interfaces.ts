@@ -3,3 +3,5 @@ export interface CourseProps {
     description: string;
     image: string;
 }
+
+export type Courses = CourseProps[];

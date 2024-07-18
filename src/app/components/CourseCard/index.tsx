@@ -1,6 +1,6 @@
 import React from "react";
 import { CourseProps } from "../../types/interfaces"; 
-import './CourseCard.scss';
+import '../../styles/CourseCard.scss';
 
 const CourseCard: React.FC<CourseProps> = ({ title, description, image}) => {
   return (

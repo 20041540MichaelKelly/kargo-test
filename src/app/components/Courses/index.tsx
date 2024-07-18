@@ -1,10 +1,10 @@
 import { CourseProps, Courses } from "../../types/interfaces"; 
-import './Courses.scss';
+import '../../styles/Courses.scss';
 import CourseCard from "../CourseCard";
 
-const CoursesComponent: React.FC<{ courses: Courses }> = ({courses}) => {
+const CoursesComponent: React.FC<{ courses: Courses }> = ({ courses }) => {
   return (
-      <section className="courses">
+    <section className="courses">
       <div className="container">
         <h2>Our Curriculums</h2>
         <div className="course-list">

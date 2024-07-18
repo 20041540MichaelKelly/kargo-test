@@ -1,9 +1,26 @@
-.courses {
-  padding: 2em 0;
-}
+// Variables
+$padding: 2em;
+$gap: 1em;
+$max-width: 1200px;
 
-.course-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+// Courses Styles
+.courses {
+  padding: $padding 0;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: $padding;
+  }
+
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $gap;
+  }
 }

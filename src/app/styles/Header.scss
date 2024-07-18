@@ -1,0 +1,66 @@
+// Variables
+$primary-color: #0033cc;
+$dark-gradient: #001a66;
+$light-gradient: $primary-color;
+$text-color: white;
+$padding: 1em;
+
+// Mixins
+@mixin flex-container($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+}
+
+// Header Styles
+.header {
+  @include gradient-background($dark-gradient, $light-gradient);
+  color: $text-color;
+  padding: $padding 0;
+
+  .container {
+    @include flex-container;
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        @include flex-container(flex-start);
+
+        li {
+          margin-right: 1em;
+
+          a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .user-icon {
+      margin-left: auto; // Pushes the user icon to the far right
+      display: flex;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+

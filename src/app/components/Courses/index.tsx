@@ -1,3 +1,5 @@
+'use client';
+
 import { CourseProps, Courses } from "../../types/interfaces"; 
 import '../../styles/Courses.scss';
 import CourseCard from "../CourseCard";

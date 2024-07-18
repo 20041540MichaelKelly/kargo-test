@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import CourseCard from '@/app/components/CourseCard';
+import Banner from '@/app/components/Banner';
 import { CourseProps } from '@/app/types/interfaces';
 
 const sampleCourse: CourseProps = {
@@ -9,9 +9,9 @@ const sampleCourse: CourseProps = {
 };
 
 const meta = {
-    title: 'Landing Page/CourseCard',
-    component: CourseCard,
-} satisfies Meta<typeof CourseCard>;
+    title: 'Landing Page/Banner',
+    component: Banner,
+} satisfies Meta<typeof Banner>;
 
 export default meta;
 

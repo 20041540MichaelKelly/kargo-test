@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { CourseProps } from "../../types/interfaces"; 
 import '../../styles/CourseCard.scss';

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import '../../styles/Header.scss';
 import UserImage from '../../images/Vector.png'

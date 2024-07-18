@@ -1,6 +1,7 @@
 // Variables
 $primary-color: #0033cc;
 $dark-gradient: #001a66;
+$hover-color: #506cf5;
 $light-gradient: $primary-color;
 $text-color: white;
 $padding: 1em;
@@ -37,6 +38,11 @@ $padding: 1em;
 
         li {
           margin-right: 1em;
+          transition: background-color 0.3s ease; // Add transition for smooth color change
+
+          &:hover {
+            background-color: $hover-color; // Apply hover color to the list item
+          }
 
           a {
             color: $text-color;
@@ -44,6 +50,7 @@ $padding: 1em;
 
             &:hover {
               text-decoration: underline;
+              color: $hover-color; // Apply hover color to the anchor tag
             }
           }
         }
@@ -51,16 +58,22 @@ $padding: 1em;
     }
 
     .user-icon {
-      margin-left: auto; // Pushes the user icon to the far right
+      margin-left: auto;
       display: flex;
       align-items: center;
 
       img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        border-radius: 0;
+        width: 27px;
+        height: 28px;
+        margin-left: auto;
+
+        &:hover {
+          background-color: $hover-color;
+        }
       }
     }
   }
 }
+
 

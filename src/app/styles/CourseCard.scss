@@ -1,27 +1,56 @@
-$metric: 50px;
+// Variables
+$primary-color: #0033cc;
+$dark-gradient: #001a66;
+$hover-color: #506cf5;
+$text-color: white;
+$padding: 1em;
+$metric: 150px; // Define the metric variable for image dimensions
+
 .course-card {
   border: 1px solid #ddd;
   padding: 1em;
-  text-align: center;
+  display: flex; // Use flexbox to align items side by side
+  align-items: center; // Center items vertically
+  gap: 1em; // Space between image and text
 
-    img {
+  img {
     width: $metric;
     height: $metric;
-    }
+    flex-shrink: 0; // Prevent the image from shrinking
+  }
+
+  .content {
+    text-align: left; // Align text to the left
+    flex-grow: 1; // Allow the content to grow and fill space
 
     h3 {
-    font-size: 1.25em;
+      font-size: 1.25em;
+      margin: 0.5em 0; // Add some margin to separate from other elements
     }
 
     p {
-    margin: 1em 0;
+      margin: 0.5em 0 1em; // Ensure margin between h3 and p
     }
 
-    a {
-    display: inline-block;
-    padding: 0.5em 1em;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
+    a, button {
+      display: inline-block;
+      padding: 0.5em 2em; // Increase padding to make the button elongated
+      margin-top: 1em; // Add some space above the button
+      color: $dark-gradient;
+      text-decoration: none;
+      border-radius: 30px; // Make the button oval-shaped
+      transition: background-color 0.3s; // Smooth transition for hover effect
+      width: 100%; // Make the button elongated by increasing its width
+
+      &:hover {
+        background-color: $hover-color; // Change background color on hover
+      }
     }
+
+    button {
+      background-color: whitesmoke;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }

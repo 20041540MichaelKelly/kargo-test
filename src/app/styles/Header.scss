@@ -21,7 +21,7 @@ $padding: 1em;
 .header {
   @include gradient-background($dark-gradient, $light-gradient);
   color: $text-color;
-  padding: $padding 0;
+  padding-left: $padding 0;
 
   .container {
     @include flex-container;
@@ -29,6 +29,7 @@ $padding: 1em;
     .logo {
       font-size: 1.5em;
       font-weight: bold;
+      padding: $padding;
     }
 
     nav {
@@ -61,6 +62,7 @@ $padding: 1em;
       margin-left: auto;
       display: flex;
       align-items: center;
+      padding-right: $padding;
 
       img {
         border-radius: 0;

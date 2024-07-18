@@ -12,10 +12,22 @@
 
   .container {
     @include flex-container;
+    text-align: left; // Align text to the left
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1em;
+  }
+
+  .banner-image {
+    max-width: 50%;
+    display: flex; // Ensure image is aligned left with content
+    align-items: center; // Center vertically within the .banner section
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .banner-content {
@@ -42,19 +54,10 @@
       font-size: 1em;
 
       &:hover {
-        background-color: #333;
+        background-color: #4e65f5;
       }
     }
   }
 
-  .banner-image {
-    max-width: 50%;
-    display: flex; // Ensure image is aligned left with content
-    align-items: center; // Center vertically within the .banner section
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+  
 }

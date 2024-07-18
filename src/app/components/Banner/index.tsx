@@ -1,9 +1,8 @@
 'use client';
 
-
 import React from 'react';
-import '../../styles/Banner.scss'; // Import the Sass file
-import BannerImage from '../../images/illustration 1.png'; // Import your banner image
+import '../../styles/Banner.scss'; 
+import BannerImage from '../../images/illustration 1.png'; 
 
 const Banner: React.FC = () => {
   return (
@@ -15,7 +14,7 @@ const Banner: React.FC = () => {
           <button>Begin your journey</button>
         </div>
         <div className="banner-image">
-          <img src={BannerImage.src} alt="Frontend Development" /> {/* Use BannerImage directly */}
+          <img src={BannerImage.src} alt="Frontend Development" /> 
         </div>
       </div>
     </section>

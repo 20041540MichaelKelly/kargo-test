@@ -1,31 +1,25 @@
 'use client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'; // Optional: For React Query Devtools
+import LandingPage from './pages/landingPage';
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 360000,
+      refetchInterval: 360000, 
+      refetchOnWindowFocus: false
+    },
+  },
+});
 
-import React, { useEffect, useState } from 'react';
-import Header from '../../src/app/components/Header';
-import Banner from '../../src/app/components/Banner';
-import Courses from '../../src/app/components/Courses';
-//import Footer from '../components/Footer';
-import { getCourseData } from './utils/supabaseQueries';
-import { CourseProps } from './types/interfaces';
+const App = () => {
+    return (
+        <QueryClientProvider client={queryClient}>
+            <LandingPage />
+            <ReactQueryDevtools initialIsOpen={false} /> {/* Optional: React Query Devtools */}
+        </QueryClientProvider>
+    );
+}
 
-const Home: React.FC = () => {
-const [courseData, setCourseData] = useState<CourseProps[] | null>(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getCourseData();
-      setCourseData(data);
-    };
-
-    fetchData();
-  }, []);
-  return (
-    <div>
-      <Header />
-      <Banner />
-      {courseData && <Courses courses={courseData} />}
-    </div>
-  );
-};
-
-export default Home;
+export default App;

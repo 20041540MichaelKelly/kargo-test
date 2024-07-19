@@ -12,7 +12,7 @@ $padding: 2em;
 // Footer Styles
 .footer {
   color: $text-color;
-  padding: $padding 0;
+  padding: $padding 1;
   text-align: center;
 
   .logo {
@@ -25,7 +25,7 @@ $padding: 2em;
     @include flex-container(space-between, center);
     flex-wrap: wrap;
     position: relative;
-    width: 100%;
+    width: 90%;
     padding: 0 $padding;
 
     nav {
@@ -46,7 +46,7 @@ $padding: 2em;
             color: $text-color;
             position: absolute;
             left: -0.5em; // Adjust this value as needed
-            font-size: 1.2em; // Adjust bullet size as needed
+            font-size: 1em; // Adjust bullet size as needed
           }
 
           &:hover {
@@ -68,6 +68,7 @@ $padding: 2em;
 
     .copyright {
       font-size: 0.8em; // Smaller text
+      padding-right: $padding;
     }
   }
 

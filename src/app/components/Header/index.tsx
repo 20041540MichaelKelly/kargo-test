@@ -1,10 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/Header.scss';
 import UserImage from '../../images/Vector.png'
+import UserSettingsDropdown from '../UserSettingsDropdown';
 
 const Header: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleUserIconClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -19,8 +26,9 @@ const Header: React.FC = () => {
             <li><a href="#svelte">Svelte</a></li>
           </ul>
         </nav>
-        <div className="user-icon">
+        <div className="user-icon" onClick={handleUserIconClick}>
           <img src={UserImage.src} alt="User Icon" />
+          {isDropdownOpen && <UserSettingsDropdown />}
         </div>
       </div>
     </header>

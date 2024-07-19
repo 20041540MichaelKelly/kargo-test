@@ -1,7 +1,7 @@
 // Variables
 $primary-color: #0033cc;
 $dark-gradient: #001a66;
-$hover-color: #506cf5;
+$hover-color: #1D3EBF;
 $light-gradient: $primary-color;
 $text-color: white;
 $padding: 1em;
@@ -21,7 +21,6 @@ $padding: 1em;
 .header {
   @include gradient-background($dark-gradient, $light-gradient);
   color: $text-color;
-  padding-left: $padding 0;
 
   .container {
     @include flex-container;
@@ -33,25 +32,38 @@ $padding: 1em;
     }
 
     nav {
+      flex-grow: 1; // Ensure nav takes available space
+      margin-left: $padding; // Space between logo and nav
+
       ul {
         list-style: none;
-        @include flex-container(flex-start);
+        @include flex-container(flex-start); // Align nav links beside logo
 
         li {
           margin-right: 1em;
-          transition: background-color 0.3s ease; // Add transition for smooth color change
+          transition: background-color 0.3s ease, color 0.3s ease; // Add transition for smooth color change
+          height: 100%; // Ensure it spans full height of container
+          display: flex;
+          align-items: center;
 
           &:hover {
             background-color: $hover-color; // Apply hover color to the list item
+            color: $text-color; // Ensure text color is white
           }
 
           a {
+            padding: $padding;
             color: $text-color;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; // Ensure anchor spans full height
+            width: 100%; // Ensure anchor spans full width
 
             &:hover {
-              text-decoration: underline;
-              color: $hover-color; // Apply hover color to the anchor tag
+              text-decoration: none; // Remove underline on hover
+              color: $text-color; // Keep text white on hover
             }
           }
         }
@@ -59,21 +71,26 @@ $padding: 1em;
     }
 
     .user-icon {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      padding-right: $padding;
+      position: relative;
+      cursor: pointer;
+      padding-right: calc($padding * 2); // Add more padding to the right
 
       img {
-        border-radius: 0;
-        width: 27px;
-        height: 28px;
-        margin-left: auto;
-
-        &:hover {
-          background-color: $hover-color;
-        }
+        width: 30px;
+        height: 30px;
       }
+
+      &:hover {
+        background-color: $hover-color; // Square full height on hover
+        color: $text-color; // Ensure text color is white
+      }
+    }
+
+    .user-settings-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 10px;
+      margin-top: 10px;
     }
   }
 }

@@ -7,7 +7,8 @@ $padding: 1em;
 $metric: 150px; // Define the metric variable for image dimensions
 
 .course-card {
-  border: 1px solid #ddd;
+  border: 0.2rem solid #f5f5f5;
+  border-radius: 30px;
   padding: 1em;
   display: flex; // Use flexbox to align items side by side
   align-items: center; // Center items vertically
@@ -43,7 +44,7 @@ $metric: 150px; // Define the metric variable for image dimensions
       width: 100%; // Make the button elongated by increasing its width
 
       &:hover {
-        background-color: $hover-color; // Change background color on hover
+        border: 2px solid  blue;
       }
     }
 

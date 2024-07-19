@@ -1,9 +1,80 @@
+$hover-color: #506cf5;
+$text-color: rgb(0, 0, 0);
+$padding: 2em;
+
+// Mixins
+@mixin flex-container($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Footer Styles
 .footer {
-    border: 1px solid #ddd;
-    padding: 1em;
-    text-align: center;
-    color: #fff;
-    position: relative; 
-    width: 100%;
-    background-color: #fff; 
+  color: $text-color;
+  padding: $padding 0;
+  text-align: center;
+
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: $padding;
   }
+
+  .container {
+    @include flex-container(space-between, center);
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding: 0 $padding;
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        li {
+          position: relative;
+          margin-right: 1em;
+          transition: background-color 0.3s ease;
+          font-size: 0.9em; // Smaller text
+
+          &::before {
+            content: '•'; // Unicode for bullet point
+            color: $text-color;
+            position: absolute;
+            left: -0.5em; // Adjust this value as needed
+            font-size: 1.2em; // Adjust bullet size as needed
+          }
+
+          &:hover {
+            background-color: $hover-color;
+          }
+
+          a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+              color: $hover-color;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 0.8em; // Smaller text
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #eaeaea;
+    margin: 1em 0;
+  }
+}

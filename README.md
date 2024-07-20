@@ -6,7 +6,7 @@ This project is a [Next.js](https://nextjs.org/) application built to explore ne
 
 ## Technologies Used
 
-- **Framework**: [Next.js](https://nextjs.org/)
+- **Framework**: [Next.js](https://nextjs.org/) 
 - **Styling**: SCSS
 - **Component Development**: [Storybook](https://storybook.js.org/)
 - **State Management**: [React Query](https://react-query.tanstack.com/)
@@ -20,7 +20,7 @@ This project is a [Next.js](https://nextjs.org/) application built to explore ne
 - **Next.js**: To explore new frameworks beyond Vite for building React applications.
 
 ### Styling
-- **Material UI**: Previously used in multiple React projects for college assignments.
+- **Material UI**: Previously used in multiple React projects for college assignments and thats why I chose to use just SCSS to learn this new style.
 - **SCSS**: Chosen to gain experience with SCSS and due to the project specifications. This project involved thorough research and learning of SCSS, and I look forward to using it more extensively in future projects.
 
 ### Component Development
@@ -42,7 +42,7 @@ This project is a [Next.js](https://nextjs.org/) application built to explore ne
 ## Backend
 
 ### Supabase
-- **Storage**: Utilized Supabase's bucket storage for images. The image URLs were stored in the courses table.
+- **Storage**: Utilized Supabase's bucket storage for images. The image URLs were stored in the courses table as well as the provided keys.
 - **Client Setup**: Keys were stored in `env.local` and a client was created to interact with Supabase.
-- **React Query Integration**: React Query was used to cache results from Supabase, minimizing redundant calls.
+- **React Query Integration**: React Query was used to cache results from Supabase, minimizing redundant calls. This was a bit OTT but if an app was to be scaled in the future it is a nice to have.
 - **Experience**: Previous experience with Supabase during my Masters dissertation highlighted its flexibility with RPCs, buckets, and real-time capabilities.

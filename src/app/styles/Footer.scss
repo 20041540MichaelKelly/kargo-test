@@ -1,0 +1,72 @@
+@use './global' as global; // Import global styles
+
+// Footer Styles
+.footer {
+  color: global.$footer-text-color;
+  padding: global.$padding-one 1;
+  text-align: center;
+
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: global.$padding-one;
+  }
+
+  .container {
+    @include global.flex-container(space-between, center);
+    flex-wrap: wrap;
+    position: relative;
+    width: 90%;
+    padding: 0 global.$padding-one;
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        li {
+          position: relative;
+          margin-right: 1em;
+          transition: global.$background-color 0.3s ease;
+          font-size: 0.9em; // Smaller text
+
+          &::before {
+            content: '•'; // Unicode for bullet point
+            color: global.$footer-text-color;
+            position: absolute;
+            left: -0.5em; 
+            font-size: 1em; 
+          }
+
+          &:hover {
+            background-color: global.$hover-color;
+          }
+
+          a {
+            color: global.$footer-text-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: none;
+              color: global.$hover-color;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 0.8em; // Smaller text
+      padding-right: global.$padding-one;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #eaeaea;
+    margin: 1em 0;
+  }
+}

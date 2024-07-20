@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FRONTEND SCHOOL
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+This project is a [Next.js](https://nextjs.org/) application built to explore new frameworks and technologies. Previously, I have extensively used [Vite](https://vitejs.dev/) for building React applications, but this time I chose Next.js to gain new experiences. This project I believe meets the criteria of React 18, using Git and SCSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: SCSS
+- **Component Development**: [Storybook](https://storybook.js.org/)
+- **State Management**: [React Query](https://react-query.tanstack.com/)
+- **Utilities**: React Dev Tools
+- **Backend**: [Supabase](https://supabase.io/)
+- **AI Assistance**: [GitHub Copilot](https://github.com/features/copilot) (for writing comments and helping with CSS when needed)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Motivation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Framework Choice
+- **Next.js**: To explore new frameworks beyond Vite for building React applications.
 
-## Learn More
+### Styling
+- **Material UI**: Previously used in multiple React projects for college assignments.
+- **SCSS**: Chosen to gain experience with SCSS and due to the project specifications. This project involved thorough research and learning of SCSS, and I look forward to using it more extensively in future projects.
 
-To learn more about Next.js, take a look at the following resources:
+### Component Development
+- **Storybook**: Components were developed in isolation using Storybook and integrated once they were complete. This approach ensured modularity and ease of testing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Storybook 1](./stb1.png)
+![Storybook 2](./stb2.png)
+![Storybook 3](./stb3.png)
+![Storybook 4](./stb4.png)
+![Storybook 5](./stb5.png)
+![Storybook 6](./stb6.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Utilities
+- **React Dev Tools & React Query**: Included to follow good practices for growing applications. React Query was particularly useful for managing server state.
 
-## Deploy on Vercel
+## Design
+- Followed high-fidelity designs as closely as possible, using specified colors and images.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Supabase
+- **Storage**: Utilized Supabase's bucket storage for images. The image URLs were stored in the courses table.
+- **Client Setup**: Keys were stored in `env.local` and a client was created to interact with Supabase.
+- **React Query Integration**: React Query was used to cache results from Supabase, minimizing redundant calls.
+- **Experience**: Previous experience with Supabase during my Masters dissertation highlighted its flexibility with RPCs, buckets, and real-time capabilities.

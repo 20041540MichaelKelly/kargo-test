@@ -1,0 +1,24 @@
+@use './global' as global; // Import global styles
+
+// Courses Styles
+.courses {
+  padding: global.$padding-two 0;
+
+  .container {
+    max-width: global.$max-width;
+    margin: 0 auto;
+    padding: 0 1em;
+    width: 80%; // Set a fixed width
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: global.$padding-two;
+  }
+
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: global.$gap;
+  }
+}

@@ -1,0 +1,84 @@
+@use './global' as global; // Import global styles
+
+// Header Styles
+.header {
+  @include global.gradient-background(global.$dark-gradient, global.$light-gradient);
+  color: global.$text-color;
+
+  .container {
+    @include global.flex-container;
+    flex-wrap: wrap;
+    position: relative;
+    width: 90%;
+    padding: 0 global.$padding-one;
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      padding-left: global.$padding-two;
+      padding-right: global.$padding-one;
+    }
+
+    nav {
+      flex-grow: 1; // Ensure nav takes available space
+      margin-left: global.$padding-one; // Space between logo and nav
+
+      ul {
+        list-style: none;
+        @include global.flex-container(flex-start); // Align nav links beside logo
+
+        li {
+          margin-right: 1em;
+          transition: global.$background-color 0.3s ease, color 0.3s ease; // Add transition for smooth color change
+          height: 100%; // Ensure it spans full height of container
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background-color: global.$hover-color; // Apply hover color to the list item
+            color: global.$text-color; // Ensure text color is white
+          }
+
+          a {
+            padding: global.$padding-one;
+            color: global.$text-color;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; // Ensure anchor spans full height
+            width: 100%; // Ensure anchor spans full width
+
+            &:hover {
+              text-decoration: none; // Remove underline on hover
+              color: global.$text-color; // Keep text white on hover
+            }
+          }
+        }
+      }
+    }
+
+    .user-icon {
+      position: relative;
+      cursor: pointer;
+      padding-right: calc(global.$padding-one * 2); // Add more padding to the right
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      &:hover {
+        background-color: global.$hover-color; // Square full height on hover
+        color: global.$text-color; // Ensure text color is white
+      }
+    }
+
+    .user-settings-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 10px;
+      margin-top: 10px;
+    }
+  }
+}

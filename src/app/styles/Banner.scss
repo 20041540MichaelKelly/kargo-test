@@ -1,0 +1,58 @@
+@use './global' as global; // Import global styles
+
+.banner {
+  @include global.flex-container; // Assuming this mixin is defined globally or in a shared file
+  padding: 2em 0;
+  background-color: #f7f7f7;
+
+  .container {
+    @include global.flex-container;
+    text-align: left; // Align text to the left
+    width: 90%;
+    max-width: global.$max-width;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  .banner-image {
+    max-width: 50%;
+    display: flex; // Ensure image is aligned left with content
+    align-items: center; // Center vertically within the .banner section
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .banner-content {
+    max-width: 75%;
+    padding-right: 3em; // Add padding to create space between content and image
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin: 1em 0;
+      font-size: 1.5em;
+    }
+
+    button {
+      padding: 0.75em 1.5em;
+      background-color: black;
+      color: global.$text-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 30px;
+      width: 100%; // Make the button elongated by increasing its width
+
+      &:hover {
+        background-color: global.$banner-hover;
+      }
+    }
+  }
+}

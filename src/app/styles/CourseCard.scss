@@ -1,0 +1,52 @@
+@use './global' as global; // Import global styles
+
+.course-card {
+  border: 0.2rem solid #f5f5f5;
+  border-radius: 30px;
+  padding: 1em;
+  display: flex; // Use flexbox to align items side by side
+  align-items: center; // Center items vertically
+  gap: 1em; // Space between image and text
+
+  img {
+    width: global.$metric;
+    height: global.$metric;
+    flex-shrink: 0; // Prevent the image from shrinking
+  }
+
+  .content {
+    text-align: left; // Align text to the left
+    flex-grow: 1; // Allow the content to grow and fill space
+
+    h3 {
+      font-size: 1.25em;
+      margin: 0.5em 0; // Add some margin to separate from other elements
+    }
+
+    p {
+      margin: 0.5em 0 1em; // Ensure margin between h3 and p
+    }
+
+    a, button {
+      display: inline-block;
+      padding: 0.5em 2em; // Increase padding to make the button elongated
+      margin-top: 1em; // Add some space above the button
+      color: global.$dark-gradient;
+      text-decoration: none;
+      border-radius: 30px; // Make the button oval-shaped
+      transition: global.$background-color 0.3s; // Smooth transition for hover effect
+      width: 100%; // Make the button elongated by increasing its width
+
+      &:hover {
+        border: 2px solid  global.$banner-hover;
+        color: global.$banner-hover;
+      }
+    }
+
+    button {
+      background-color: whitesmoke;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

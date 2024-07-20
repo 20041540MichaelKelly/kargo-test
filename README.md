@@ -1,8 +1,11 @@
 # FRONTEND SCHOOL
 
+## Live Version Deployed
+https://frontend-school.vercel.app/
+
 ## Introduction
 
-This project is a [Next.js](https://nextjs.org/) application built to explore new frameworks and technologies. Previously, I have extensively used [Vite](https://vitejs.dev/) for building React applications, but this time I chose Next.js to gain new experiences. This project I believe meets the criteria of React 18, using Git and SCSS.
+This project is a [Next.js](https://nextjs.org/) application built to explore new frameworks and technologies. Previously, I have extensively used [Vite](https://vitejs.dev/) for building React applications, but this time I chose Next.js to gain new experiences. This project I believe meets the criteria of React 18, using Git and SCSS. 
 
 ## Technologies Used
 

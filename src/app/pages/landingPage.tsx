@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <Banner />
-            <Courses courses={courses} />
+            <Courses courses={courses || []} />
             <Footer />
     </div>
   );

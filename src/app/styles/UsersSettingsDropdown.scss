@@ -1,3 +1,5 @@
+@use './global' as global; // Import global styles
+
 .user-settings-dropdown {
   position: relative;
 
@@ -36,7 +38,7 @@
 
         &:hover {
           background-color: #E5EBFF;
-          color: #506cf5;
+          color: global.$hover-color;
         }
       }
     }
@@ -51,6 +53,6 @@
         }
         &:hover {
           background-color: #E5EBFF;
-          color: #506cf5;
+          color: global.$hover-color;
         }
 }

@@ -1,32 +1,23 @@
-$hover-color: #506cf5;
-$text-color: rgb(0, 0, 0);
-$padding: 2em;
-
-// Mixins
-@mixin flex-container($justify: space-between, $align: center) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
+@use './global' as global; // Import global styles
 
 // Footer Styles
 .footer {
-  color: $text-color;
-  padding: $padding 1;
+  color: global.$footer-text-color;
+  padding: global.$padding-one 1;
   text-align: center;
 
   .logo {
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: $padding;
+    margin-bottom: global.$padding-one;
   }
 
   .container {
-    @include flex-container(space-between, center);
+    @include global.flex-container(space-between, center);
     flex-wrap: wrap;
     position: relative;
     width: 90%;
-    padding: 0 $padding;
+    padding: 0 global.$padding-one;
 
     nav {
       ul {
@@ -38,28 +29,28 @@ $padding: 2em;
         li {
           position: relative;
           margin-right: 1em;
-          transition: background-color 0.3s ease;
+          transition: global.$background-color 0.3s ease;
           font-size: 0.9em; // Smaller text
 
           &::before {
             content: '•'; // Unicode for bullet point
-            color: $text-color;
+            color: global.$footer-text-color;
             position: absolute;
-            left: -0.5em; // Adjust this value as needed
-            font-size: 1em; // Adjust bullet size as needed
+            left: -0.5em; 
+            font-size: 1em; 
           }
 
           &:hover {
-            background-color: $hover-color;
+            background-color: global.$hover-color;
           }
 
           a {
-            color: $text-color;
+            color: global.$footer-text-color;
             text-decoration: none;
 
             &:hover {
-              text-decoration: underline;
-              color: $hover-color;
+              text-decoration: none;
+              color: global.$hover-color;
             }
           }
         }
@@ -68,7 +59,7 @@ $padding: 2em;
 
     .copyright {
       font-size: 0.8em; // Smaller text
-      padding-right: $padding;
+      padding-right: global.$padding-one;
     }
   }
 

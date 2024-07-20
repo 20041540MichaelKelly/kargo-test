@@ -1,10 +1,4 @@
-// Variables
-$primary-color: #0033cc;
-$dark-gradient: #001a66;
-$hover-color: #506cf5;
-$text-color: white;
-$padding: 1em;
-$metric: 150px; // Define the metric variable for image dimensions
+@use './global' as global; // Import global styles
 
 .course-card {
   border: 0.2rem solid #f5f5f5;
@@ -15,8 +9,8 @@ $metric: 150px; // Define the metric variable for image dimensions
   gap: 1em; // Space between image and text
 
   img {
-    width: $metric;
-    height: $metric;
+    width: global.$metric;
+    height: global.$metric;
     flex-shrink: 0; // Prevent the image from shrinking
   }
 
@@ -37,14 +31,15 @@ $metric: 150px; // Define the metric variable for image dimensions
       display: inline-block;
       padding: 0.5em 2em; // Increase padding to make the button elongated
       margin-top: 1em; // Add some space above the button
-      color: $dark-gradient;
+      color: global.$dark-gradient;
       text-decoration: none;
       border-radius: 30px; // Make the button oval-shaped
-      transition: background-color 0.3s; // Smooth transition for hover effect
+      transition: global.$background-color 0.3s; // Smooth transition for hover effect
       width: 100%; // Make the button elongated by increasing its width
 
       &:hover {
-        border: 2px solid  blue;
+        border: 2px solid  global.$banner-hover;
+        color: global.$banner-hover;
       }
     }
 

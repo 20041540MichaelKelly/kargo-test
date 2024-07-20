@@ -1,0 +1,28 @@
+/*This file contains the global styles for the application. 
+It includes the variables and mixins that are used throughout the application.*/
+
+//variables
+$primary-color: #0033cc;
+$dark-gradient: #001a66;
+$hover-color: #506cf5;
+$text-color: white;
+$metric: 150px; // Define the metric variable for image dimensions
+$light-gradient: $primary-color;
+$padding-one: 1em;
+$footer-text-color: rgb(0, 0, 0);
+$padding-two: 2em;
+$gap: 1em;
+$max-width: 1200px;
+$banner-hover: #0033FF;
+$background-color: gradient-background($dark-gradient, $light-gradient);
+
+// Mixins
+@mixin flex-container($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+}

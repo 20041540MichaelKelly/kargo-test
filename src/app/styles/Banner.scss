@@ -1,20 +1,15 @@
+@use './global' as global; // Import global styles
 
-// Mixins
-@mixin flex-container($justify: space-between, $align: center) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
 .banner {
-  @include flex-container; // Assuming this mixin is defined globally or in a shared file
+  @include global.flex-container; // Assuming this mixin is defined globally or in a shared file
   padding: 2em 0;
   background-color: #f7f7f7;
 
   .container {
-    @include flex-container;
+    @include global.flex-container;
     text-align: left; // Align text to the left
     width: 90%;
-    max-width: 1200px;
+    max-width: global.$max-width;
     margin: 0 auto;
     padding: 0 1em;
   }
@@ -47,7 +42,7 @@
     button {
       padding: 0.75em 1.5em;
       background-color: black;
-      color: white;
+      color: global.$text-color;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -56,7 +51,7 @@
       width: 100%; // Make the button elongated by increasing its width
 
       &:hover {
-        background-color: #0033FF;
+        background-color: global.$banner-hover;
       }
     }
   }

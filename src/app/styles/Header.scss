@@ -1,59 +1,47 @@
-// Variables
-$primary-color: #0033cc;
-$dark-gradient: #001a66;
-$hover-color: #1D3EBF;
-$light-gradient: $primary-color;
-$text-color: white;
-$padding: 1em;
-
-// Mixins
-@mixin flex-container($justify: space-between, $align: center) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-@mixin gradient-background($start-color, $end-color) {
-  background: linear-gradient(to right, $start-color, $end-color);
-}
+@use './global' as global; // Import global styles
 
 // Header Styles
 .header {
-  @include gradient-background($dark-gradient, $light-gradient);
-  color: $text-color;
+  @include global.gradient-background(global.$dark-gradient, global.$light-gradient);
+  color: global.$text-color;
 
   .container {
-    @include flex-container;
+    @include global.flex-container;
+    flex-wrap: wrap;
+    position: relative;
+    width: 90%;
+    padding: 0 global.$padding-one;
 
     .logo {
       font-size: 1.5em;
       font-weight: bold;
-      padding: $padding;
+      padding-left: global.$padding-two;
+      padding-right: global.$padding-one;
     }
 
     nav {
       flex-grow: 1; // Ensure nav takes available space
-      margin-left: $padding; // Space between logo and nav
+      margin-left: global.$padding-one; // Space between logo and nav
 
       ul {
         list-style: none;
-        @include flex-container(flex-start); // Align nav links beside logo
+        @include global.flex-container(flex-start); // Align nav links beside logo
 
         li {
           margin-right: 1em;
-          transition: background-color 0.3s ease, color 0.3s ease; // Add transition for smooth color change
+          transition: global.$background-color 0.3s ease, color 0.3s ease; // Add transition for smooth color change
           height: 100%; // Ensure it spans full height of container
           display: flex;
           align-items: center;
 
           &:hover {
-            background-color: $hover-color; // Apply hover color to the list item
-            color: $text-color; // Ensure text color is white
+            background-color: global.$hover-color; // Apply hover color to the list item
+            color: global.$text-color; // Ensure text color is white
           }
 
           a {
-            padding: $padding;
-            color: $text-color;
+            padding: global.$padding-one;
+            color: global.$text-color;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -63,7 +51,7 @@ $padding: 1em;
 
             &:hover {
               text-decoration: none; // Remove underline on hover
-              color: $text-color; // Keep text white on hover
+              color: global.$text-color; // Keep text white on hover
             }
           }
         }
@@ -73,7 +61,7 @@ $padding: 1em;
     .user-icon {
       position: relative;
       cursor: pointer;
-      padding-right: calc($padding * 2); // Add more padding to the right
+      padding-right: calc(global.$padding-one * 2); // Add more padding to the right
 
       img {
         width: 30px;
@@ -81,8 +69,8 @@ $padding: 1em;
       }
 
       &:hover {
-        background-color: $hover-color; // Square full height on hover
-        color: $text-color; // Ensure text color is white
+        background-color: global.$hover-color; // Square full height on hover
+        color: global.$text-color; // Ensure text color is white
       }
     }
 
